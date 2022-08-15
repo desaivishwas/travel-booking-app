@@ -1,0 +1,5 @@
+.head-container {
+    padding         : 5% 10%;
+    background-color: rgb(34, 64, 104);
+    background-image: linear-gradient(to bottom right, rgb(34, 64, 104), white);
+}

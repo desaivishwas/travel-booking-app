@@ -1,0 +1,55 @@
+<div class="wrapper">
+    <div>
+        <button mat-button color="primary" class="back button" (click)="goBackClick()">
+            Back To Seat Selection
+        </button>
+    </div>
+    <div class="payment-confirmation">
+        <div class="seats-selected" *ngFor="let data of bookingData">
+            <div *ngIf="data.seatCount > 0" class="row">
+                <div class="index-val w-10p">
+                    &#x2022;
+                </div>
+                <div class="w-90p">
+                    <div class="row">
+                        <div class="seat-type w-30p">
+                            <span class="seat-type-span">Seat Type</span>
+                        </div>
+                        <div class="seat-type w-30p">
+                            <span class="seat-type-span" [innerHTML]="data.seatType"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="seat-count w-30p">
+                            <span class="seat-count-span">Seat Count</span>
+                        </div>
+                        <div class="seat-count w-30p">
+                            <span class="seat-count-span" [innerHTML]="data.seatCount"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="seat-count w-30p">
+                            <span class="seat-count-span">Seat Price (in million)</span>
+                        </div>
+                        <div class="seat-count w-30p">
+                            <span class="seat-count-span" [innerHTML]="data.seatCount * data.price"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="total-cost row">
+            <div class="cost-value w-30p">
+                <span class="cost-value-span">Total Cost (in million)</span>
+            </div>
+            <div class="cost-value w-30p">
+                <span class="cost-value-span" [innerHTML]="totalPrice"></span>
+            </div>
+        </div>
+    </div>
+    <div>
+        <button mat-button color="primary" class="book button" (click)="bookSeatsClick()">
+            Book Seats
+        </button>
+    </div>
+</div>

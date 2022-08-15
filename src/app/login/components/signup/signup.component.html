@@ -1,0 +1,93 @@
+<div class="wrapper w-60p">
+
+    <div class="signup-content">
+
+        <!-- <div class="internal-auth">
+            <div class="row">
+                <div class="header-line w-30p">
+                    <svg height="10" class="w-100p">
+                        <line x1="0" x2="100%" style="stroke:rgb(73, 73, 73); stroke-width:1px" />
+                    </svg>
+                </div>
+                <div class="auth-header w-40p">
+                    <span class="header-span" [innerHTML]="internalAuthHeader">
+                    </span>
+                </div>
+                <div class="header-line w-30p">
+                    <svg height="10" class="w-100p">
+                        <line x1="0" x2="100%" style="stroke:rgb(73, 73, 73); stroke-width:1px" />
+                    </svg>
+                </div>
+            </div>
+        </div> -->
+
+        <form class="signup-form w-100p" [formGroup]="signupForm">
+
+            <div class="form-item user-email row">
+                <mat-icon>alternate_email</mat-icon>
+                <mat-form-field class="field w-100p">
+                    <input matInput type="text" placeholder="Email Address" name="userEmail"
+                        formControlName="userEmail">
+                </mat-form-field>
+            </div>
+            <div class="form-item user-password row">
+                <mat-icon>lock_outline</mat-icon>
+                <mat-form-field class="field w-100p">
+                    <input matInput [type]="hide ? 'password' : 'text'" placeholder="Password" name="userPassword"
+                        formControlName="userPassword" autocomplete="off">
+                    <buttom mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide Password'"
+                        [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+                    </buttom>
+                </mat-form-field>
+            </div>
+            <div class="form-item user-password row">
+                <mat-icon>lock_outline</mat-icon>
+                <mat-form-field class="field w-100p">
+                    <input matInput type="password" placeholder="Re-enter Password" name="userRePassword"
+                        formControlName="userRePassword" autocomplete="off">
+                    <!-- <buttom mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide Password'"
+                        [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility' }}</mat-icon> 
+                    </buttom> -->
+                </mat-form-field>
+            </div>
+            <div class="user-submit">
+                <button mat-raised-button color="primary" class="submit button" (click)="signupClick()"
+                    [disabled]="!signupForm.valid">
+                    {{signupText}}
+                </button>
+            </div>
+
+        </form>
+
+        <div class="external-auth">
+            <div class="separator row">
+                <div class="header-line w-30p">
+                    <svg height="10" class="w-100p">
+                        <line x1="0" x2="100%" style="stroke:rgb(73, 73, 73); stroke-width:1px" />
+                    </svg>
+                </div>
+                <div class="auth-header w-40p">
+                    <span class="header-span" [innerHTML]="externalAuthHeader">
+                    </span>
+                </div>
+                <div class="header-line w-30p">
+                    <svg height="10" class="w-100p">
+                        <line x1="0" x2="100%" style="stroke:rgb(73, 73, 73); stroke-width:1px" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="auth-items row">
+                <div class="google button-logo pointer-cursor" (click)="signupClickGoogle()">
+                    <img class="logo main w-100p" src="assets/icons/logo-external/g-logo.png">
+                    <img class="logo alt w-100p" src="assets/icons/logo-external/g-logo-2.png">
+                </div>
+            </div>
+        </div>
+        <!-- <app-reset-password></app-reset-password> -->
+
+    </div>
+
+</div>

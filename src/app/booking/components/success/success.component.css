@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;700&display=swap');
+
+.wrapper {
+    background-image: linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.5) 20%, rgba(0, 0, 0, 0) 50%,
+            rgb(80, 114, 60, 0.75) 90%, rgb(80, 114, 60)), url("../../../../assets/backgrounds/space/space_bg.png");
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.head,
+.body {
+    padding: 2%;
+    color: rgb(255, 255, 255);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: xx-large;
+    font-weight: 500;
+}
+
+.gohome-text:hover {
+    font-weight: bold;
+}
+
+.qr-info {
+    margin-top: 10%;
+}

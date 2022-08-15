@@ -1,0 +1,38 @@
+<div class="wrapper">
+  <div class="content">
+    <div class="testimonial-head">
+      <span class="head-span" [innerHTML]="testimonialHeadText"></span>
+    </div>
+    <div class="testimonial-body w-60p">
+      <owl-carousel-o [options]="customOptions">
+
+        <ng-container *ngFor="let testimonialItem of testimonialData">
+          <ng-template carouselSlide>
+
+            <div class="testimonial-data">
+              <div class="testimonial-image">
+                <img [src]="testimonialItem.testimonialPhoto" alt="img 1">
+              </div>
+              <div class="testimonial-content  text-center">
+                <div class="testimonial-user">
+                  {{testimonialItem.testimonialBy}}
+                </div>
+                <div class="testimonial-quote w-10p">
+                  <img class="quote" src="assets\backgrounds\misc\inverted-quote-open.png" alt="">
+                </div>
+                <div class="testimonial-text">
+                  {{testimonialItem.testimonialText}}
+                </div>
+                <div class="testimonial-quote close w-10p">
+                  <img class="quotes close" src="assets\backgrounds\misc\inverted-quote-open.png" alt="">
+                </div>
+              </div>
+            </div>
+
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+
+    </div>
+  </div>
+</div>

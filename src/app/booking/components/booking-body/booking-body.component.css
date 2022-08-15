@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;700&display=swap');
+
+.wrapper {
+    margin: 5%;
+}
+
+.content-head {
+    color: black;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: xx-large;
+    font-weight: 500;
+}
+
+.content-body {
+    margin-top: 2%;
+}
+
+.content-body .row {
+    margin-top: 1%;
+}
+
+.content-body .head,
+.seat-types-head {
+    font-weight: 500;
+    font-size: large;
+}
+
+.content-body .content,
+.seat-types-body {
+    font-weight: 400;
+    font-size: larger;
+}
+
+.type,
+.price,
+.seat-types-head .counter {
+    margin-top: 1.25em;
+}
+
+.launch-map {
+    margin: 0 25%;
+}

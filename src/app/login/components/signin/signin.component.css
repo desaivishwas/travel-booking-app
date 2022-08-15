@@ -1,0 +1,59 @@
+.wrapper {
+    margin    : 5% 20%;
+    text-align: center;
+}
+
+/* Headers - All */
+.auth-header {
+    text-align: center;
+}
+
+.header-span {
+    font-size  : medium;
+    font-weight: 500;
+}
+
+.header-line {
+    margin-top: 1%;
+}
+
+/* Email Login - Form Data */
+.form-item {
+    margin: 0 2%;
+}
+
+.submit.button {
+    width: 50%;
+}
+
+.mat-icon {
+    padding-top  : 5%;
+    padding-right: 3%;
+}
+
+/* External Login  */
+.separator {
+    margin-top   : 5vh;
+    margin-bottom: 5vh;
+}
+
+/* External Items - Individual */
+.auth-items {
+    justify-content: center;
+}
+
+.button-logo {
+    width: 50px;
+}
+
+.logo.alt {
+    display: none;
+}
+
+.button-logo:hover .logo.main {
+    display: none;
+}
+
+.button-logo:hover .logo.alt {
+    display: block;
+}

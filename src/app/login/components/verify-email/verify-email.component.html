@@ -1,0 +1,22 @@
+<div class="wrapper">
+
+    <div class="welcome-content">
+        <div class="header lineheight-1-5">
+            <span id="typedtext" [innerHTML]="textPrint"></span>
+        </div>
+
+        <div class="button continue yellow">
+            <button mat-button [disabled]="isDisabled" color="primary" class="submit button" (click)="continueClick()">
+                <span>Continue</span>
+            </button>
+        </div>
+    </div>
+
+</div>
+
+<!-- <div class="form-group" *ngIf="auth.user$ | async as user">
+    We have sent a confirmation email to {{user.email}}.
+</div>
+<div class="resend">
+    <button type="button" (click)="auth.">
+</div> -->

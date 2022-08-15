@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;700&display=swap');
+
+.wrapper {
+    background-color: black;
+}
+
+.content {
+    padding-top: 3%;
+}
+
+.header {
+    margin-left: 1%;
+}
+
+.name {
+    margin-top: 6%;
+    font-family: 'Pacifico', cursive;
+    color: white;
+    font-size: xxx-large;
+}
+
+.search-nav {
+    padding-top: 20%;
+    z-index: 20;
+    text-align: center;
+}
+
+.looking {
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: xxx-large;
+    font-weight: 700;
+}
+
+.click-text {
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: xxx-large;
+    font-weight: 500;
+}
+
+.click-here {
+    width: 20%;
+    font-size: large;
+}
+
+.rocket {
+    text-align: right;
+    z-index: 20;
+}
+
+.head-end {
+    margin-top: -30%;
+    z-index: 19;
+}

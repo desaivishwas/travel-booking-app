@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;700&display=swap');
+
+.wrapper {
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0)), url("../../../../assets/backgrounds/sun/sun-2.png");
+    background-position: top;
+    background-size: cover;
+}
+
+.content {
+    padding: 5%;
+}
+
+.what {
+    margin: 5%;
+}
+
+.what-head {
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: xxx-large;
+    font-weight: 700;
+}
+
+.what-body {
+    background-color: white;
+    margin-top: 5%;
+    padding: 2%;
+}
+
+.body-content {
+    background-color: rgb(17, 16, 16);
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: x-large;
+    font-weight: 400;
+    padding: 5%;
+}
+
+.astro-image {
+    animation: rotation 2s infinite alternate;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(5deg);
+    }
+}

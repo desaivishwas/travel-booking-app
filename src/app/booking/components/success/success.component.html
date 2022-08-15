@@ -1,0 +1,84 @@
+<div class="wrapper row">
+    <div class="text-info">
+        <div class="head lineheight-1-5">
+            <div class="head-text">
+                {{successHeadText}}
+            </div>
+        </div>
+        <div class="body lineheight-1-5">
+            <div class="body-content">
+                <div class="body-text">
+                    {{successBodyText}}
+                </div>
+
+                <div class="journey-details">
+                    <div class="journey-date details">
+                        <span class="details-span"
+                            [innerHTML]="userJourney.journey.date.toDate() | date: 'dd-MMM-yyyy'"></span>
+                    </div>
+                    <div class="row">
+                        <div class="journey-duration details-head">
+                            <span class="details-span" [innerHTML]="textDuration"></span>
+                        </div>
+                        <div class="journey-duration details">
+                            <span class="details-span" [innerHTML]="userJourney.journey.duration"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="journey-from details-head">
+                            <span class="details-span" [innerHTML]="textFrom"></span>
+                        </div>
+                        <div class="journey-from details">
+                            <span class="details-span" [innerHTML]="userJourney.journey.from"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="journey-from details-head">
+                            <span class="details-span" [innerHTML]="textTo"></span>
+                        </div>
+                        <div class="journey-to details">
+                            <span class="details-span" [innerHTML]="userJourney.journey.to"></span>
+                        </div>
+                    </div>
+
+                    <div class="seats-selected" *ngFor="let data of userJourney.journey.seatType">
+                        <div *ngIf="data.seatCount > 0" class="row">
+                            <div class="index-val w-10p">
+                                &#x2022;
+                            </div>
+                            <div class="w-90p">
+                                <div class="row">
+                                    <div class="seat-type w-30p">
+                                        <span class="seat-type-span">Seat Type</span>
+                                    </div>
+                                    <div class="seat-type w-30p">
+                                        <span class="seat-type-span" [innerHTML]="data.seatType"></span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="seat-count w-30p">
+                                        <span class="seat-count-span">Seat Count</span>
+                                    </div>
+                                    <div class="seat-count w-30p">
+                                        <span class="seat-count-span" [innerHTML]="data.seatCount"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-text">
+                    {{successFootText}}
+                </div>
+                <div class="gohome-text pointer-cursor" (click)="goHome()">
+                    Click Here to Go To Home
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="qr-info">
+        <app-qrcode [qrURL]="qrURLValue"></app-qrcode>
+    </div>
+</div>
+<!-- IuserJourney.journey -->

@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;700&display=swap');
+
+.wrapper {
+    background: linear-gradient(to bottom, rgb(80, 114, 60), #7a9b67);
+}
+
+.content {
+    padding: 5%;
+}
+
+.testimonial-head {
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: xxx-large;
+    font-weight: 700;
+}
+
+.testimonial-body {
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.testimonial-image {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto;
+}
+
+.testimonial-image img {
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, .1);
+    width: 100%;
+    height: 100%;
+}
+
+.testimonial-user {
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: xx-large;
+    font-weight: 500;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    text-align: center;
+}
+
+.testimonial-text {
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: x-large;
+    font-weight: 500;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    text-align: center;
+}
+
+.testimonial-quote.close {
+    padding-left: 90%;
+}
+
+.quotes.close {
+    transform: rotate(180deg);
+}

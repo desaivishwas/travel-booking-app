@@ -1,0 +1,109 @@
+<div class="wrapper">
+    <div *ngIf="!isPaymentReady; else payment">
+        <div class="journey-content">
+            <div class="content-head">
+                <span class="head-span" [innerHTML]="journeyHeadText"></span>
+            </div>
+            <div class="content-body">
+                <div class="destination row">
+                    <div class="head w-40p">
+                        <span class="hean-span" [innerHTML]="textDestination"></span>
+                    </div>
+                    <div class="content w-40p">
+                        <span class="destination-span" [innerHTML]="journeyDetail.to"></span>
+                    </div>
+                </div>
+                <div class="from row">
+                    <div class="head w-40p">
+                        <span class="hean-span" [innerHTML]="textFrom"></span>
+                    </div>
+                    <div class="content w-40p">
+                        <span class="from-span" [innerHTML]="journeyDetail.from"></span>
+                    </div>
+                </div>
+                <div class="date row">
+                    <div class="head w-40p">
+                        <span class="hean-span" [innerHTML]="textDate"></span>
+                    </div>
+                    <div class="content w-40p">
+                        <span class="date-span" [innerHTML]="journeyDetail.date.toDate() | date: 'dd-MMM-yyyy'"></span>
+                        <!-- <span class="date-span">{{journeyDetail.date.toDate() | date: 'dd-MMM-yyyy'}}</span> -->
+                    </div>
+                </div>
+                <div class="vehicle row">
+                    <div class="head w-40p">
+                        <span class="hean-span" [innerHTML]="textVehicle"></span>
+                    </div>
+                    <div class="content w-40p">
+                        <span class="vehicle-span" [innerHTML]="journeyDetail.vehicleType"></span>
+                    </div>
+                </div>
+                <div class="seats row">
+                    <div class="head w-40p">
+                        <span class="hean-span" [innerHTML]="textSeats"></span>
+                    </div>
+                    <div class="content w-40p">
+                        <span class="seats-span" [innerHTML]="journeyDetail.seatCount"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="content-purchase w-80p">
+                    <div class="seat-types-head row">
+                        <div class="type w-40p">
+                            <span class="type-span" [innerHTML]="textSeatType"></span>
+                        </div>
+                        <div class="price w-40p">
+                            <span class="price-span" [innerHTML]="textSeatPrice"></span>
+                        </div>
+                        <div class="counter w-20p">
+                            <span class="price-span" [innerHTML]="textSeatCounter"></span>
+                        </div>
+                    </div>
+                    <div *ngFor="let seats of seatData">
+                        <div class="seat-types-body row">
+                            <div class="type w-40p">
+                                <span class="type-span" [innerHTML]="seats.seatType"></span>
+                            </div>
+                            <div class="price w-40p">
+                                <span class="price-span" [innerHTML]="seats.price"></span>
+                            </div>
+                            <div class="counter w-20p">
+                                <app-counter (counterValue)="setCounter($event, seats.id)"></app-counter>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="seat-types-body row">
+                        <div class="type w-40p">
+                            <span class="type-span" [innerHTML]="textTotalCost"></span>
+                        </div>
+                        <div class="price w-40p">
+                            <span class="price-span" [innerHTML]=""></span>
+                        </div>
+                        <div class="counter w-20p">
+                            <span class="price-span" [innerHTML]="totalPrice"></span>
+                        </div>
+                    </div>
+                    <div class="proceed-button">
+                        <button mat-button color="primary" class="proceed button" [disabled]="!canProceed"
+                            (click)="proceedToPay()">
+                            Proceed To Pay
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="launch-map">
+                <div class="launch-direction">
+                    <app-maps [coordinateArray]="coordinates"></app-maps>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ng-template #payment>
+        <app-payment (goBack)="goBack()" (bookSeat)="bookSeats()" [bookingDetails]="seatData"></app-payment>
+    </ng-template>
+</div>

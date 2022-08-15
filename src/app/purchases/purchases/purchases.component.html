@@ -1,0 +1,36 @@
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<h1 style="margin-left: 1em; margin-top: 1em;">Purchases</h1>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Date/Time Purchased</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Amount Paid</th>
+      </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let purchase of purchases | async">
+            <ng-container *ngFor="let product of products | async">
+                <ng-container *ngIf="purchase.amount == product.cost">
+                    <tr>
+                        <th scope="row">{{unixTimestampToDateString(purchase.created)}}</th>
+                        <td>{{product.name}}</td>
+                        <td>${{purchase.amount/100}}</td>
+                    </tr>
+                </ng-container>
+            </ng-container>
+        </ng-container>
+    </tbody>
+</table>
+
+
+
+
+
+
+
+

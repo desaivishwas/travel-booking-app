@@ -1,0 +1,16 @@
+.wrapper {
+    background         : url("../../assets/backgrounds/space/space_bg-4.jpg");
+    background-position: center;
+    background-size    : cover;
+    height             : 100vh;
+}
+
+.authentication-content {
+    padding: 10vh 30vw;
+}
+
+.authentication-tabs {
+    height          : 80vh;
+    width           : 40vw;
+    background-color: rgba(255, 255, 255, 0.5);
+} 

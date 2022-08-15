@@ -1,0 +1,40 @@
+<div class="wrapper">
+    <div class="content">
+        <div class="row w-100p">
+            <div class="header row w-20p">
+                <div class="logo w-20p">
+                    <img class="logo-image w-100p" src="assets/icons/logo-internal/astrowhirled-2.png" alt="">
+                </div>
+                <div class="name w-80p">
+                    AstroWhirled
+                </div>
+            </div>
+
+            <div class="search-nav w-60p lineheight-1-5">
+                <div class="looking">
+                    <span class="" [innerHTML]="lookingText"></span>
+                </div>
+                <div class="click-text">
+                    <span class="click-text-span" [innerHTML]="clickHereText"></span>
+                </div>
+                <div class="click-button">
+                    <button mat-raised-button class="click-here button" (click)="searchClick()">
+                        {{clickHereButtonText}}
+                    </button>
+                </div>
+            </div>
+
+            <div class="rocket w-20p">
+                <img class="rocket-image w-100p" src="assets/backgrounds/rockets/rocket-1.png" alt="">
+            </div>
+        </div>
+        <div class="head-end">
+            <div class="row planets">
+                <!-- Add later -->
+            </div>
+            <div class="row sun">
+                <img class="sun-image w-100p" src="assets/backgrounds/sun/sun-1.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
