@@ -1,7 +1,4 @@
-# AstroWhirled - A subsidy of Solar Express Inc. 
-# We make traveling to your favourite space entiry simple.
-
-# If you need some space, think of us.
+# AstroWhirled - A interspace travel booking app. 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
 
@@ -28,3 +25,10 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+
+
+
+
+Project part of submission for Software engineering I (CSCI P 565)
