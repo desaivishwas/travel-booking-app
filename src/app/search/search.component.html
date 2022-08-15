@@ -1,0 +1,8 @@
+<div class="wrapper">
+    <div class="input-container">
+        <app-search-input (searchData)="executeSearch($event)"></app-search-input>
+    </div>
+    <div class="result-container">
+        <app-search-result [searchResults]="searchResults"></app-search-result>
+    </div>
+</div>

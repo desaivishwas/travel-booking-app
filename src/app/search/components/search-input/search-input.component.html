@@ -1,0 +1,35 @@
+<div class="input-box">
+    <form [formGroup]="searchForm">
+        <div class="row w-100p">
+            <div class="destination w-40p">
+                <mat-form-field appearance="fill">
+                    <mat-label>Pick Your Destination</mat-label>
+                    <input type="text" matInput formControlName="searchDestination" required
+                        [matAutocomplete]="autoGroup">
+                    <mat-autocomplete #autoGroup="matAutocomplete">
+                        <mat-optgroup *ngFor="let group of destinationGroupOptions | async"
+                            [label]="group.destinationHead">
+                            <mat-option *ngFor="let item of group.destinationItems" [value]="item">
+                                {{item}}
+                            </mat-option>
+                        </mat-optgroup>
+                    </mat-autocomplete>
+                </mat-form-field>
+            </div>
+            <div class="date w-40p">
+                <mat-form-field appearance="fill">
+                    <mat-label>Pick a Date</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="searchDate">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="search w-20p">
+                <button mat-raised-button color="primary" class="submit button" (click)="searchClick()"
+                    [disabled]="!searchForm.valid">
+                    {{searchButtonText}}
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

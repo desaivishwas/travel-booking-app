@@ -1,0 +1,50 @@
+
+
+<!-- to add later
+    <div class="users-wrapper">
+        <app-users></app-users>
+    </div>
+
+    old stuff:
+<div #scroll class="chatmessages-wrapper">
+    <app-user-chat-messages></app-user-chat-messages>
+</div>
+
+<div class="chatform-wrapper">
+    <app-user-chat-form></app-user-chat-form>
+</div>
+
+    -->
+
+
+<button #button style="position:fixed; right:20px; bottom:20px; z-index: 1000;"
+*ngIf="(authRef.user | async) as user"
+(click)="toggleMenu(button, chat, container)">
+
+<img src="assets/icons/chat/chat.png" alt="chat">
+
+</button>
+
+
+<div class="chat-container" #container>
+
+    <div class="chat" #chat>
+        <!--
+        <div #scroll class="chatmessages-wrapper">
+            <app-user-chat-messages></app-user-chat-messages>
+        </div>
+    
+        <div class="chatform-wrapper">
+            <app-user-chat-form></app-user-chat-form>
+        </div>
+        -->
+        <!--
+        <app-user-chat-dropdown></app-user-chat-dropdown>
+        -->
+        <app-user-chat-messages id="msgFeed" style="height: 300px; overflow-y: scroll; position:relative;"></app-user-chat-messages>
+        <app-user-chat-form></app-user-chat-form>
+    </div>
+
+    
+</div>
+

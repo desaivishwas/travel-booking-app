@@ -1,0 +1,32 @@
+.input-box {
+    padding: 2% 5%;
+}
+
+tr.detail-row {
+    height: 0;
+}
+
+tr.element-row:not(.expanded-row):hover {
+    background: whitesmoke;
+}
+
+tr.element-row:not(.expanded-row):active {
+    background: #efefef;
+}
+
+.element-row td {
+    border-bottom-width: 0;
+}
+
+.cell-details {
+    overflow: hidden;
+    display: flex;
+}
+
+.cell-content {
+    margin: 2%;
+}
+
+.cell-header {
+    font-weight: bold;
+}

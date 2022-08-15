@@ -1,0 +1,149 @@
+<div class="wrapper">
+    <div *ngIf="profileMessage.length > 0" class="profile-message">
+        <span class="message-span" [innerHTML]="profileMessage"></span>
+    </div>
+    <div class="profile-content">
+        <!-- Email -->
+        <div class="profile-item user-email row">
+            <div class="w-20p">
+                <span class="email user-details">
+                    Email
+                </span>
+            </div>
+            <div class="w-80p">
+                <mat-form-field class="field w-100p">
+                    <input matInput type="text" name="userEmail" [disabled]="true" [(ngModel)]="userProfile.email">
+                </mat-form-field>
+            </div>
+        </div>
+        <!-- Full Name -->
+        <div class="profile-item user-fullname row">
+            <div class="w-20p">
+                <span class="fullname user-details">
+                    Full Name
+                </span>
+            </div>
+            <div class="w-80p">
+                <mat-form-field class="field w-100p">
+                    <input matInput type="text" placeholder="Full Name *" name="userFullname"
+                        [(ngModel)]="userProfile.fullName">
+                </mat-form-field>
+            </div>
+        </div>
+        <!-- Address -->
+        <div class="profile-item user-address row">
+            <div class="w-20p">
+                <span class="address user-details">
+                    Address
+                </span>
+            </div>
+            <div class="w-80p">
+                <div>
+                    <mat-form-field class="field w-100p">
+                        <input matInput type="text" placeholder="Address Line 1 *" name="addressLine1"
+                            [(ngModel)]="userProfile.address.addressLine1">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field class="field w-100p">
+                        <input matInput type="text" placeholder="Address Line 2" name="addressLine2"
+                            [(ngModel)]="userProfile.address.addressLine2">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field class="field w-100p">
+                        <input matInput type="text" placeholder="Address Line 3" name="addressLine3"
+                            [(ngModel)]="userProfile.address.addressLine3">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field class="field w-100p">
+                        <input matInput type="text" placeholder="City *" name="addressCity"
+                            [(ngModel)]="userProfile.address.addressCity">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field class="field w-100p">
+                        <input matInput type="text" placeholder="State *" name="addressState"
+                            [(ngModel)]="userProfile.address.addressState">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field class="field w-100p">
+                        <input matInput type="text" placeholder="Country *" name="addressCountry"
+                            [(ngModel)]="userProfile.address.addressCountry">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field class="field w-100p">
+                        <input matInput type="number" min="9999" max="100000" placeholder="Zipcode *" name="addressZip"
+                            [(ngModel)]="userProfile.address.addressZip">
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+        <!-- Contacts -->
+        <div class="profile-item user-contact row">
+            <div class="w-20p">
+                <span class="contact user-details">
+                    Contact Information
+                </span>
+            </div>
+            <div class="w-80p">
+                <div *ngFor="let contact of userProfile.contacts">
+                    <div>
+                        <mat-form-field class="field w-100p">
+                            <input matInput type="text" placeholder="Contact Type *" name="contactType"
+                                [(ngModel)]="contact.contactType">
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field class="field w-100p">
+                            <input matInput type="number" placeholder="Country Code *" min="1" max="999"
+                                name="contactCountryCode" [(ngModel)]="contact.contactCountryCode">
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field class="field w-100p">
+                            <input matInput type="number" minlength="10" min="999999999"
+                                placeholder="Contact Number with Area Code *" name="contactNumber"
+                                [(ngModel)]="contact.contactNumber">
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Photo URL -->
+        <div class="profile-item user-photourl row">
+            <div class="w-20p">
+                <span class="photourl user-details">
+                    Photo URL
+                </span>
+            </div>
+            <div class="w-80p">
+                <mat-form-field class="field w-100p">
+                    <input matInput type="text" name="photourl" [(ngModel)]="userProfile.photoUrl">
+                </mat-form-field>
+                <img class="profile-photo" [src]="userProfile.photoUrl" alt="User Profile">
+            </div>
+        </div>
+        <!-- Submit -->
+        <div class="profile-item update">
+            <div *ngIf="cantSubmit" class="w-80p">
+                <span class="submit user-details">
+                    Please enter the required data.
+                </span>
+            </div>
+            <div *ngIf="profileUpdated" class="w-80p">
+                <span class="submit user-details">
+                    Profile Updates
+                </span>
+            </div>
+            <div class="w-80p">
+                <button mat-raised-button color="primary" class="submit button" (click)="updateClick()">
+                    UPDATE
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

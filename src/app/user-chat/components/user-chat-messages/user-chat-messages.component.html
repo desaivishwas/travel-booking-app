@@ -1,0 +1,8 @@
+<div class="feedWrapper">
+
+    <div *ngFor="let message of messageFeed | async" class="message">
+        <app-user-chat-message [message]=message></app-user-chat-message>
+        <!-- <app-chatmessage [message]=message></app-chatmessage> -->
+    </div>
+
+</div>

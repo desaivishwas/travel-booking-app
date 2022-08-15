@@ -1,0 +1,52 @@
+<div class="nav-menu">
+    <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon class="icon-white">menu</mat-icon>
+    </button>
+</div>
+
+<mat-sidenav-container class="nav-container">
+
+    <mat-sidenav #sidenav mode="over" position="end" class="side-nav" fixedInViewport="true">
+        <div class="wrapper">
+
+            <div class="close-nav">
+                <button mat-icon-button (click)="sidenav.toggle()">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+
+            <div *ngIf="isUserLoggedIn; else notlogged">
+                <div class="user-image">
+                    <img src="https://yt3.ggpht.com/ZAg-xr2AV9j21lTcDTJUzx0u8Y_jn0VzX4PQ8whanpC26nBw-JrnL3czKtdsU_2BK4U_xntlGw=s900-c-k-c0x00ffffff-no-rj" alt="img 1">
+                  </div>
+                
+                <div class="user-profile">
+                    <button mat-button color="primary" class="profile button" (click)="userProfile()">
+                        User Profile
+                    </button>
+                </div>
+
+                <div class="sign-out">
+                    <button mat-button color="primary" class="signout button" (click)="signoutClick()">
+                        Sign Out
+                    </button>
+                </div>
+            </div>
+
+            <ng-template #notlogged>
+                <div class="sign-in">
+                    <button mat-button color="primary" class="signin button" (click)="signinClick()">
+                        Log In
+                    </button>
+                </div>
+            </ng-template>
+
+        </div>
+    </mat-sidenav>
+    <!-- <mat-sidenav-content>
+        <div class="nav-page">
+            Hi
+        </div>
+    </mat-sidenav-content> -->
+
+</mat-sidenav-container>

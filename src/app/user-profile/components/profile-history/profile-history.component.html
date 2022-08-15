@@ -1,0 +1,55 @@
+<div class="wrapper">
+    <div class="history-header">
+        <span class="header" [innerHTML]="textHeader"></span>
+    </div>
+    <div class="history-body">
+        <mat-accordion>
+            <div *ngFor="let userJourney of userJourneys" class="user-journeys">
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <div class="row w-100p">
+                                <div class="title destination w-40p">
+                                    {{userJourney.journey.to}}
+                                </div>
+                                <div class="title date w-40p">
+                                    {{userJourney.journey.date.toDate() | date: "dd-MMM-yyyy"}}
+                                </div>
+                            </div>
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            Vehicle: {{userJourney.journey.vehicleType}}
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <div class="jounery-details">
+                        <div class="seats-selected" *ngFor="let data of userJourney.journey.seatType">
+                            <div *ngIf="data.seatCount > 0" class="row">
+                                <div class="index-val w-10p">
+                                    &#x2022;
+                                </div>
+                                <div class="w-90p">
+                                    <div class="row">
+                                        <div class="seat-type w-30p">
+                                            <span class="seat-type-span">Seat Type</span>
+                                        </div>
+                                        <div class="seat-type w-30p">
+                                            <span class="seat-type-span" [innerHTML]="data.seatType"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="seat-count w-30p">
+                                            <span class="seat-count-span">Seat Count</span>
+                                        </div>
+                                        <div class="seat-count w-30p">
+                                            <span class="seat-count-span" [innerHTML]="data.seatCount"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </mat-expansion-panel>
+            </div>
+        </mat-accordion>
+    </div>
+</div>

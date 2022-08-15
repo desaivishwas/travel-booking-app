@@ -1,0 +1,10 @@
+.feedWrapper {
+
+    overflow: scroll;
+
+}
+
+.message {
+    flex-direction: column;
+    margin: 3px 0;
+}

@@ -1,0 +1,8 @@
+
+<select
+    (change)="this.handleSelection($event)">
+    <option *ngFor="let user of this.chatService.supportStaff"
+[value]="user">
+  {{user}}
+</option>
+</select>
