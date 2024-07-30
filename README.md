@@ -1,4 +1,4 @@
-# AstroWhirled - A interspace travel booking app. 
+# PathFinder - A interspace travel booking app. 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
 
